@@ -1,0 +1,174 @@
+[클라우드 CloudZ Labs]
+Digital Transformation 정의의 변화
+SW is eating up the world
+
+competitive Pressures : 인간이 분석하여 반영
+Technology Disruption : Rule만 바꾸거나 이벤트 처리함수만 바꾸어 새로운 서비스를 제공
+Increasing commoditization : Cloud 개념의 시작
+
+
+기존은 인프라 종속성으로 인해 SW에 집중하기 어려움
+Container는 인프라를 SW화 하여 쁜 서비스 배포, Biz 로직에만 집중할 수 있도록 함
+
+어떤 Worload를 Microservice/Container로 구축해야하는가?
+ - 비지니스 목표와 기술제약사항을 분석하여 수립 필요
+
+-------------------------------------------------------------------------------------------
+
+
+[PaaS 개요]
+
+https://unsplash.com/
+https://www.cncf.io/    - 기술적인 Cloud 기술 Trend 참고 가능
+
+
+점차 SW가 많은 비중을 차지하게 됨
+
+*오라클 DB --> 마레아 DB
+Join과 DB에서 Logid이 구동되는 이슈(오라클 function 사용 다수)
+Master code는 캐쉬로 변환하고, 각각 데이터set을 가져와 코드로 알고리즘이 도는 구조가 더 효율적
+최근에 java에서 Core분산이 가능함
+빠른 변경이 필요하지만, DB의 Logic이 많이 들어가있으면 변경이 어려움
+
+Storage Engin이 자유로운 장점이 있다
+
+Iaas, Paas
+
+
+
+Cloud의 장점
+1. Fast
+2. Extensible
+   - 가용 Phsical 리소스가 충분하다면, 용량 관리는 여전히 필요
+   - BUT, 부족시 online으로 Add on 가능
+3. Agile
+   - 직접 관리 및 개발이 가능
+4. Utilized
+   - 자원과 예산에 대한 simple해짐
+
+일하는 방식의 변화가 필요
+
+Micro Service Architecture
+  - 일부 모듈에 이상이 생기더라도, 전체 서비스에 영향을 주지 않도록 함
+  - 일부 기능에 부하가 생긴다면, 그부분만 보강 가능
+
+IP의 개념이 모호해짐
+contationer가 죽으면 새로운 IP로 뜸
+POD IP, 캐시의 IP를 일어서 라우터가 전송해줌
+
+Staticㅇ 아니라이름기준으로 움직일 수있는 nynamic한 구조로 개발 필요
+
+Ptovidioninh
+ - 쿨라우드는 불안정, 죽더라도 새로운것 새로 띄워줉게가 가능
+
+
+Service Mesh : 교통정리의 역할
+오픈소스라 커스터마이징이 어
+
+
+
+기존시스템 특히 하이닉스 시스템 구성상으로는 제약이 많다.ㅋㅋㅋ
+아예 처음부터 시갖하는 시스템 또는 다른 관점에서 
+
+
+클라우드에서는 무정지 패치가 가능?
+Could에서 외부 메세지를 받아서 처리 가능?한가.. 한 zis로 처리되는 ??????
+보안 이슈
+보안설정을 신경쓰지 안하도된다고 하는데
+
+
+----------------------------------------------------------------------------------------
+
+[Docker]
+
+아직 Storage 가상화 기술까지는 미흡
+
+Virtual Machine vs. Docker Machine
+
+쿠버네티스
+Hypervisor
+Statefulsets : 중간 프로세스에서 에러가 나는경우 이후 프로세스 실행시 처리되지 않는 현상 등 관리
+Cronjobs
+
+외부 솔루션 사용시 라이센스 이슈 반드시 확인
+Core단위 또는 맥어드레스 단위가되면 가상화 환경에서 이슈가 발생가능
+특히 가상화 환경에서는 IP가 계속 변경될 수있음
+
+
+               
+----------------------------------------------------------------------------------------
+
+Kubernetes : 도커 컨테이너 오케스트레이션 역할 ,이미지로 컨테이너가 구성되어있음. 컨테이너 = Pob
+
+개발생산성을 높여주는것 --> 플랫폼의 역할
+Auto Scaling
+
+
+Pod > Docker container > Docke Image
+
+[Docker]
+Container = 개발하고자 하는 Application 단위
+
+Dockerfile = Docker를 만들기 위한 이미지의 모듬, *이미지가 중요함
+이미지를 통해 쉽게 어플리케이션을 구축할 수 있다.
+
+도커레지스트리가 
+
+1. 하이닉스 전체 APP으 두고 Master Plan을 짠다 
+    - APP 담당자가 결정하는 수준이 아님
+2. 순차적으로 전환 대상 서비스를 결정함
+
+
+[클라우드 전환 순서]
+Cloud Ready --> Cloud Friendly --> Cloud Native
+판단 및 	Refactoring	   ReAchitecturing
+replatforming   클라우드 효과를    마이크로 아키텍쳐까지 완료되어있는 상태
+클라우드 배포가  볼수있는 단계
+목표             
+
+
+12Factor
+
+                볼수있는 단계
+
+
+Base Image file을 docker File에 명시 하여 빌드 --> Docker run
+
+
+컨테이너간 자원공유는 안됨
+따라서 static 변수로 선언해서 사용하는 부분이 있었다면 다 변겨 필요
+
+
+외부 및 config의 변경에 따른 추가 패치를 최대한 막어야함
+
+
+Monolithic vs. MicroService
+그러나 운영 코스트가 많ㅇ 소요되므로 실제 효용이 있는 서비스를 전환해야한다.
+어떤 어플리케이션을 변경해야하나
+ - 요구사항이 빈번하고 배포르 자주 해야하는 경우, 단위단위 쪼개지는 경우에효율적
+   ex) 잔여 기본통호 부분만 마이크로 서비스로 전환하여 스케일아웃함
+
+
+-----------------------------------------------------------------------------------
+
+[Spring Boot]
+
+어플리케이션보다는 개발자가 얼마나빠른 시간내에 개발환경을 setup할수있는가
+쉽게 어플리케이션을 개발할 수 있도록 함
+
+라이브러리를 버전별로 일일히 setup하는게 아니라 미리 Mapping되어있는 최적의 라이브러리를 묶어놓으면
+개발자는 다운로드받아서 사용을 할 수 있다.
+물론 사용자가 지정한 라이브러리를 우선순위로 실행도 가능함
+
+APP config도 사용자가 일일히 setup하지 않아도 됨
+
+
+
+JDK1.8 이상 IDE(eclipse)만 설치만되면 초기개발준비 완료
+
+Swaffer.io : api작성을 위한 솔루션 
+
+
+로그를 남기는것은 지양
+Container자체가 뜨기때문에 컨테이너 내부에 로그를 남겨도 활용이 어려움
+외부 DB나 다른 어플리케이션으로 빼도록 함
